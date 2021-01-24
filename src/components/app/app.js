@@ -20,8 +20,10 @@ function App() {
   const [search, setSearch] = useState('');
 
   const onItemAdded = (label) => {
-    const item = createItem(label);
-    setItems((prev) => [...prev, item]);
+    if (label !=='') {
+      const item = createItem(label);
+      setItems((prev) => [...prev, item]);
+    }
   };
 
   const toggleProperty = (arr, id, propName) => {
